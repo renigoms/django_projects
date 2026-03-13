@@ -1,0 +1,8 @@
+button {
+    background-color: #000;
+    color: white;
+    font-style: oblique;
+    font-weight: bolder;
+    display: grid;
+}
+
