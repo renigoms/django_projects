@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+from django.conf.global_settings import LOGOUT_REDIRECT_URL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d8jo^z5cnuce2xn^acqs1lvfc@&eac1ezn^3mqg$0*j_ri%dqo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG com valor TRUE = modo desenvolvimento
+# DEBUG com valor FALSE = modo produção
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -115,4 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' # Usado  durante o desenvolvimento
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Usado durante a produção
+
+LOGOUT_REDIRECT_URL='index'
