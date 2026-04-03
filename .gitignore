@@ -1,1 +1,5 @@
 estudos-django/slides
+.idea
+venv
+.venv
+
