@@ -2,4 +2,4 @@ estudos-django/slides
 .idea
 venv
 .venv
-
+__pycache__
