@@ -15,18 +15,7 @@ def contact(request):
     form = ContactForm(request.POST or None)
     if str(request.method) == 'POST':
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-
-            # Imprimir no terminal
-            print('Mensagem Enviada')
-            print(f'Nome: {name}')
-            print(f'E-mail: {email}')
-            print(f'Assunto: {subject}')
-            print(f'Mesagem: {message}')
-
+            form.send_email()
             # Isso é o que vai fazer o {% bootstrap_messages %} funcionar
             messages.success(request, 'E-mail enviado com sucesso!')
             # form = ContactForm(request.POST or None)

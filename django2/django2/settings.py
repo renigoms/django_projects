@@ -85,7 +85,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'rngazrcb',
         'PORT': '3306',
-        'HOST': '172.17.0.2',
+        'HOST': '172.17.0.3',
     }
 }
 
@@ -126,3 +126,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Email Configurations
+"""Como eu não tenho um servidor de e-mail aqui, eu estou dizendo para o django para ele simular o envio de um 
+e-mail e printar no console."""
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Para produção
+"""
+    EMAIL_HOST= 'localhost'
+    EMAIL_PORT = 25
+    EMAIL_HOST_USER = 'no-reply@meudominio.com.br'
+    EMAIL_HOST_PASSWORD = 'minha-senha'
+    EMAIL_USE_TLS = True
+"""
